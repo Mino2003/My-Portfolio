@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minoli Fernando | BIS Undergraduate</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Orbitron (headings) · Inter (body) · JetBrains Mono (code/logs) -->
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="logo-bracket">[</span>MF<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about"          class="nav__link">About</a></li>
+        <li><a href="#education" class="nav__link">Education</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#skills"         class="nav__link">Skills</a></li>
+        <li><a href="#projects"       class="nav__link">Projects</a></li>
+        <li><a href="#certifications" class="nav__link">Certs</a></li>
+        <li><a href="#contact"        class="nav__link">Contact</a></li>
+      </ul>
+      <a href="assets/Resume Minoli Fernando.pdf" class="nav__cv-btn" download>
+        <i data-lucide="download" style="width:14px;height:14px;"></i> Resume
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__glow hero__glow--3"></div>
+
+    <div class="hero__content">
+      <!-- Availability badge -->
+      <div class="hero__badge">
+        <span class="badge__dot"></span>
+        <span>Open to Internships &amp; Opportunities · 2026</span>
+      </div>
+
+      <h1 class="hero__name">
+        <span class="name-line" style="--d:0.05s">Minoli</span>
+        <span class="name-line name-line--accent" style="--d:0.15s">Fernando</span>
+      </h1>
+
+      <div class="hero__roles">
+        <span class="role-pill role-pill--primary">BIS Undergraduate</span>
+        <span class="role-pill role-pill--primary">University of Sri Jayewardenepura</span>
+        <span class="role-pill role-pill--primary">Business Analytics</span>
+      </div>
+
+      <p class="hero__tagline">
+        Turning <em>complex business needs</em> into <em>data-driven solutions</em>-<br/>
+        bridging strategy, systems, and actionable insights to drive business value.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">
+          <i data-lucide="folder-open"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn--ghost">
+          <i data-lucide="send"></i> Get in Touch
+        </a>
+      </div>
+
+      <!-- Stat chips -->
+      <div class="hero__stats">
+        <div class="stat-chip"><span class="stat-val">3+</span><span class="stat-lbl">Projects</span></div>
+        <div class="stat-chip"><span class="stat-val">3rd</span><span class="stat-lbl">Year BIS</span></div>
+        <div class="stat-chip"><span class="stat-val">2028</span><span class="stat-lbl">Graduation</span></div>
+        <div class="stat-chip"><span class="stat-val">4+</span><span class="stat-lbl">Certifications</span></div>
+      </div>
+
+      <!-- Status terminal -->
+      <div class="hero__terminal">
+        <div class="terminal__bar">
+          <span class="term-status"><span class="term-status__dot"></span>LIVE</span>
+          <span class="t-title">minoli@business-analyst ~ %</span>
+        </div>
+        <div class="terminal__body">
+          <span class="t-prompt">$</span>
+          <span class="t-text" id="terminalText"></span>
+          <span class="t-cursor">▋</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="hero__scroll"><i data-lucide="chevrons-down"></i></a>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+<div class="about__layout">
+
+  <div class="about__photo reveal">
+    <div class="profile-card">
+
+      <div class="scan-ring">
+        <div class="scan-line"></div>
+        <span class="corner corner--tl"></span>
+        <span class="corner corner--tr"></span>
+        <span class="corner corner--bl"></span>
+        <span class="corner corner--br"></span>
+
+        <img src="assets/me.jpeg"
+             alt="Minoli Fernando"
+             class="profile-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+
+        <div class="profile-img-ph" style="display:none;">
+          <i data-lucide="user"></i>
+        </div>
+      </div>
+
+      <div class="profile-card__info">
+        <span class="profile-card__name">Minoli Fernando</span>
+        <span class="profile-card__role">BIS Undergraduate</span>
+        <div class="profile-card__status">
+          <span class="profile-dot"></span>
+          <span>Available for Internships</span>
+        </div>
+      </div>
+
+      <div class="profile-card__id">
+        <span class="pid-key">USER_ID</span><span class="pid-sep">:</span><span class="pid-val">MF-2026-BIS</span>
+      </div>
+
+      <div class="profile-card__socials">
+        <a href="https://github.com/Mino2003" target="_blank" rel="noopener" aria-label="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/minolifernando" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i data-lucide="linkedin"></i>
+        </a>
+        <a href="mailto:minolirashmika17@gmail.com" aria-label="Email">
+          <i data-lucide="mail"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="about__left reveal">
+    <h2 class="sec-h2">Get to <span class="c-primary">Know Me</span></h2>
+    <p class="about__p">
+      I'm a 3rd-year <strong>Business Information Systems Undergraduate</strong> student at the University of Sri Jayewardenepura with a strong interest in bridging the gap between business needs and technology. I enjoy analyzing problems, understanding user requirements, and designing practical solutions that create value.
+    </p>
+    <p class="about__p">
+      As an aspiring <strong class="c-primary">Business Analyst</strong>, I'm continuously developing my skills in requirements engineering, process analysis, data-driven decision-making, and project collaboration. Through academic projects, leadership roles, and hands-on experience, I strive to build solutions that are both innovative and user-focused.
+    <div class="about__tags">
+      <span class="a-tag"><i data-lucide="map-pin"></i> Sri Lanka</span>
+      <span class="a-tag"><i data-lucide="landmark"></i> USJ</span>
+      <span class="a-tag"><i data-lucide="briefcase"></i> Business Analysis</span>
+    </div>
+  </div>
+
+  <div class="about__right reveal">
+    <div class="roadmap-card">
+      <div class="roadmap-card__hd">
+        <i data-lucide="map" style="width:15px;height:15px;"></i> Career Roadmap
+      </div>
+      <div class="roadmap__steps">
+
+        <div class="roadmap__step roadmap__step--active">
+          <div class="roadmap__ico"><i data-lucide="graduation-cap"></i></div>
+          <div class="roadmap__body">
+            <span class="roadmap__label">Now</span>
+            <strong>BIS Undergraduate</strong>
+            <span>Business Analysis • Systems Analysis • Web Development • Data Analytics</span>
+          </div>
+        </div>
+
+        <div class="roadmap__line"></div>
+
+        <div class="roadmap__step">
+          <div class="roadmap__ico"><i data-lucide="clipboard-check"></i></div>
+          <div class="roadmap__body">
+            <span class="roadmap__label">Next</span>
+            <strong>Business Analyst</strong>
+            <span>Requirements Gathering • SRS Documentation • UML Modeling • Agile Scrum • Stakeholder Communication</span>
+          </div>
+        </div>
+
+        <div class="roadmap__line"></div>
+
+        <div class="roadmap__step">
+          <div class="roadmap__ico"><i data-lucide="line-chart"></i></div>
+          <div class="roadmap__body">
+            <span class="roadmap__label">Goal</span>
+            <strong>Senior Business Analyst → Digital Transformation Consultant</strong>
+            <span>Business Process Improvement • Product Strategy • Project Management • Digital Innovation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== EDUCATION ========== -->
+  <section class="section education" id="education">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="eyebrow__num">02</span>
+        <span class="eyebrow__txt">Education</span>
+      </div>
+      <h2 class="sec-h2">Academic <span class="c-primary">Background</span></h2>
+      <div class="certs__grid">
+
+        <!-- Degree -->
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="graduation-cap"></i></div>
+            <span class="cert-badge cert-badge--done">Feb 2024 – Present</span>
+          </div>
+          <h3 class="cert-title">BSc (Hons) in Business Information Systems</h3>
+          <p class="cert-org">University of Sri Jayewardenepura</p>
+          <p class="cert-desc">Faculty of Management Studies and Commerce <br>Dept. of Information Technology</p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">FOCUS</span><span class="cl-val">Business Analytics &amp; Systems Analysis</span></span>
+            <span class="cl-row"><span class="cl-key">STACK</span><span class="cl-val">Python · C# · JS · PHP · HTML · MySQL</span></span>
+          </div>
+        </div>
+
+        <!-- A/L -->
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="book-open"></i></div>
+            <span class="cert-badge cert-badge--done">2022 / 2023</span>
+          </div>
+          <h3 class="cert-title">G.C.E. Advanced Level</h3>
+          <p class="cert-org">Panadura Balika Maha Vidyalaya</p>
+          <p class="cert-desc">Commerce Stream <br>Passed with outstanding academic performance.</p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">RESULTS</span><span class="cl-val">3 A's</span></span>
+            <span class="cl-row"><span class="cl-key">Z-SCORE</span><span class="cl-val">1.88 (District Rank: 64)</span></span>
+          </div>
+        </div>
+
+        <!-- O/L -->
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="award"></i></div>
+            <span class="cert-badge cert-badge--done">2019</span>
+          </div>
+          <h3 class="cert-title">G.C.E. Ordinary Level</h3>
+          <p class="cert-org">Agamethi Balika Maha Vidyalaya</p>
+          <p class="cert-desc">Completed secondary education with high academic achievement.</p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">RESULTS</span><span class="cl-val">8 A's &amp; 1 B</span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ========== EXPERIENCE ========== -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="eyebrow__num">03</span>
+        <span class="eyebrow__txt">Experience</span>
+      </div>
+      <h2 class="sec-h2">Work <span class="c-primary">Experience</span></h2>
+      <div class="experience__grid">
+
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="briefcase"></i></div>
+            <span class="cert-badge cert-badge--done">Aug 2023 – Jan 2024</span>
+          </div>
+          <h3 class="cert-title">Audit Trainee</h3>
+          <p class="cert-org">A.I. MACAN MARKAR & CO. · Colombo 04</p>
+          <p class="cert-desc">
+            Assisted in auditing financial documents and maintaining accurate records using MS Excel for data analysis and reporting. Developed strong attention to detail and cross-functional teamwork.
+          </p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">ROLE</span><span class="cl-val">Audit Trainee</span></span>
+            <span class="cl-row"><span class="cl-key">TOOLS</span><span class="cl-val">MS Excel · Financial Auditing</span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="eyebrow__num">04</span>
+        <span class="eyebrow__txt">Skills</span>
+      </div>
+      <h2 class="sec-h2">Technical <span class="c-primary">Proficiencies</span></h2>
+      <div class="skills__layout">
+
+        <div class="skill-card reveal">
+          <div class="skill-card__hd">
+            <div class="skill-card__ico"><i data-lucide="code-2"></i></div>
+            <h3>Technical</h3>
+          </div>
+          <ul class="skill-bars">
+            <li><span>Python</span><div class="bar"><div class="bar__fill" data-w="88"></div></div><span class="pct">88%</span></li>
+            <li><span>C#</span><div class="bar"><div class="bar__fill" data-w="80"></div></div><span class="pct">80%</span></li>
+            <li><span>PHP / JavaScript</span><div class="bar"><div class="bar__fill" data-w="82"></div></div><span class="pct">82%</span></li>
+            <li><span>MySQL / MongoDB</span><div class="bar"><div class="bar__fill" data-w="85"></div></div><span class="pct">85%</span></li>
+            <li><span>HTML / CSS</span><div class="bar"><div class="bar__fill" data-w="88"></div></div><span class="pct">88%</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__hd">
+            <div class="skill-card__ico"><i data-lucide="briefcase"></i></div>
+            <h3>Business</h3>
+          </div>
+          <ul class="skill-bars">
+            <li><span>Business Analysis</span><div class="bar"><div class="bar__fill" data-w="90"></div></div><span class="pct">90%</span></li>
+            <li><span>Requirements Gathering / SRS</span><div class="bar"><div class="bar__fill" data-w="90"></div></div><span class="pct">90%</span></li>
+            <li><span>UML Modeling</span><div class="bar"><div class="bar__fill" data-w="85"></div></div><span class="pct">85%</span></li>
+            <li><span>Agile Scrum</span><div class="bar"><div class="bar__fill" data-w="88"></div></div><span class="pct">88%</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card__hd">
+            <div class="skill-card__ico"><i data-lucide="wrench"></i></div>
+            <h3>Tools</h3>
+          </div>
+          <div class="tools-grid">
+            <div class="tool-item"><i data-lucide="github"></i><span>GitHub</span></div>
+            <div class="tool-item"><i data-lucide="bar-chart-2"></i><span>Power BI</span></div>
+            <div class="tool-item"><i data-lucide="table-2"></i><span>Excel</span></div>
+            <div class="tool-item"><i data-lucide="database"></i><span>Access</span></div>
+            <div class="tool-item"><i data-lucide="file-text"></i><span>MS Office</span></div>
+            <div class="tool-item"><i data-lucide="layout-dashboard"></i><span>ClickUp</span></div>
+            <div class="tool-item"><i data-lucide="app-window"></i><span>Streamlit</span></div>
+            <div class="tool-item"><i data-lucide="server"></i><span>MongoDB</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="eyebrow__num">05</span>
+        <span class="eyebrow__txt">Projects</span>
+      </div>
+      <div class="projects__hd">
+        <h2 class="sec-h2">Featured <span class="c-primary">Work</span></h2>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="ftab active" data-filter="all">All</button>
+          <button class="ftab" data-filter="web">Web</button>
+          <button class="ftab" data-filter="app">App</button>
+          <button class="ftab" data-filter="ba">Business Analysis</button>
+        </div>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid">
+
+        <!-- Project 1: Study Planner and Task Tracker -->
+        <article class="proj-card reveal" data-tags="app">
+          <div class="proj-card__img-wrap">
+            <div class="proj-img proj-img--studyplanner">
+              <div class="img-ph">
+                <i data-lucide="calendar-check-2"></i>
+                <span>STUDY_PLANNER.APP</span>
+              </div>
+            </div>
+            <div class="proj-overlay">
+              <a href="https://github.com/Mino2003/Study_Planner"
+                 target="_blank" rel="noopener" class="overlay-link">
+                <i data-lucide="github"></i> View on GitHub
+              </a>
+            </div>
+            <span class="proj-num">01</span>
+          </div>
+          <div class="forensic-badge">
+            <div class="forensic-badge__row">
+              <span class="fb-key">INDEX</span><span class="fb-val">PRJ.01</span>
+            </div>
+            <div class="forensic-badge__row">
+              <span class="fb-key">STATUS</span><span class="fb-val fb-val--done">✓ DEPLOYED</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-cats">
+              <span class="pcat pcat--web">Productivity</span>
+              <span class="pcat pcat--ai">GUI App</span>
+            </div>
+            <h3 class="proj-title">Study Planner and Task Tracker</h3>
+            <p class="proj-desc">Designed a productivity application to manage study schedules and track task completion, with a clean Streamlit-based interface.</p>
+            <div class="forensic-report">
+              <div class="fr-line"><span class="fr-key">ROLE</span><span class="fr-sep">:</span><span class="fr-val">Streamlit & GUI Development</span></div>
+              <div class="fr-line"><span class="fr-key">STACK</span><span class="fr-sep">:</span><span class="fr-val">Python · MongoDB · Streamlit</span></div>
+              <div class="fr-line"><span class="fr-key">SKILLS</span><span class="fr-sep">:</span><span class="fr-val">GUI Design · Data Persistence</span></div>
+            </div>
+            <a href="https://github.com/Mino2003/Study_Planner"
+               class="proj-link" target="_blank" rel="noopener">
+              View Project <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Debit Card Renewal System (Featured) -->
+        <article class="proj-card proj-card--featured reveal" data-tags="web">
+          <div class="proj-card__img-wrap">
+            <div class="proj-img proj-img--debitcard">
+              <div class="img-ph">
+                <i data-lucide="credit-card"></i>
+                <span>DEBIT_CARD_RENEWAL.SYS</span>
+              </div>
+            </div>
+            <div class="proj-overlay">
+              <a href="https://github.com/Department-of-IT-FMSC-USJ/group-project-group-8"
+                 target="_blank" rel="noopener" class="overlay-link">
+                <i data-lucide="github"></i> View on GitHub
+              </a>
+            </div>
+            <div class="featured-pill">✦ Featured</div>
+            <span class="proj-num">02</span>
+          </div>
+          <div class="forensic-badge">
+            <div class="forensic-badge__row">
+              <span class="fb-key">INDEX</span><span class="fb-val">PRJ.02</span>
+            </div>
+            <div class="forensic-badge__row">
+              <span class="fb-key">STATUS</span><span class="fb-val fb-val--active">● ACTIVE</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-cats">
+              <span class="pcat pcat--web">Full Stack</span>
+              <span class="pcat pcat--agri">Banking</span>
+            </div>
+            <h3 class="proj-title">Debit Card Renewal System</h3>
+            <p class="proj-desc">Developed a web-based system to automate card renewal requests, with structured database management for records and approvals.</p>
+            <div class="forensic-report">
+              <div class="fr-line"><span class="fr-key">ROLE</span><span class="fr-sep">:</span><span class="fr-val">Database Developer</span></div>
+              <div class="fr-line"><span class="fr-key">STACK</span><span class="fr-sep">:</span><span class="fr-val">HTML · PHP · CSS · JavaScript · MYSQL</span></div>
+              <div class="fr-line"><span class="fr-key">DATABASE</span><span class="fr-sep">:</span><span class="fr-val">MySQL</span></div>
+            </div>
+            <a href="https://github.com/Department-of-IT-FMSC-USJ/group-project-group-8"
+               class="proj-link" target="_blank" rel="noopener">
+              View Project <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: TeaGo -->
+        <article class="proj-card reveal" data-tags="ba">
+          <div class="proj-card__img-wrap">
+            <div class="proj-img proj-img--teago">
+              <div class="img-ph">
+                <i data-lucide="leaf"></i>
+                <span>TEAGO.SRS</span>
+              </div>
+            </div>
+            <div class="proj-overlay">
+              <span class="overlay-link"><i data-lucide="clipboard-list"></i> Business Analysis</span>
+            </div>
+            <span class="proj-num">03</span>
+          </div>
+          <div class="forensic-badge">
+            <div class="forensic-badge__row">
+              <span class="fb-key">INDEX</span><span class="fb-val">PRJ.03</span>
+            </div>
+            <div class="forensic-badge__row">
+              <span class="fb-key">STATUS</span><span class="fb-val fb-val--active">● ACTIVE</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-cats">
+              <span class="pcat pcat--web">Business Analysis</span>
+              <span class="pcat pcat--agri">Agriculture</span>
+            </div>
+            <h3 class="proj-title">TeaGo – Tea Estate &amp; Factory Management System</h3>
+            <p class="proj-desc">Worked as Business Analyst and Scrum Master — gathered requirements, prepared the SRS document, created UML diagrams, and managed Agile sprints using ClickUp for a tea estate management system.</p>
+            <div class="forensic-report">
+              <div class="fr-line"><span class="fr-key">ROLE</span><span class="fr-sep">:</span><span class="fr-val">Business Analyst · Scrum Master</span></div>
+              <div class="fr-line"><span class="fr-key">DELIVERABLES</span><span class="fr-sep">:</span><span class="fr-val">SRS · UML Diagrams</span></div>
+              <div class="fr-line"><span class="fr-key">PROCESS</span><span class="fr-sep">:</span><span class="fr-val">Agile Sprints · ClickUp</span></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section class="section certs" id="certifications">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="eyebrow__num">06</span>
+        <span class="eyebrow__txt">Certifications</span>
+      </div>
+      <h2 class="sec-h2">Credentials <span class="c-primary">&amp; Learning</span></h2>
+      <div class="certs__grid">
+
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="award"></i></div>
+            <span class="cert-badge cert-badge--done">Completed</span>
+          </div>
+          <h3 class="cert-title">AAT Passed Finalist</h3>
+          <p class="cert-org">Association of Accounting Technicians of Sri Lanka</p>
+          <p class="cert-desc">Completed the full AAT qualification, building a strong foundation in accounting and financial principles.</p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">ISSUER</span><span class="cl-val">AAT Sri Lanka</span></span>
+            <span class="cl-row"><span class="cl-key">PERIOD</span><span class="cl-val">Jul 2020 – Jul 2021</span></span>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="calculator"></i></div>
+            <span class="cert-badge cert-badge--done">Completed</span>
+          </div>
+          <h3 class="cert-title">Computerized Accounting Software Course</h3>
+          <p class="cert-org">The Open University of Sri Lanka</p>
+          <p class="cert-desc">Hands-on training in computerized accounting systems and financial software tools.</p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">ISSUER</span><span class="cl-val">OUSL</span></span>
+            <span class="cl-row"><span class="cl-key">PERIOD</span><span class="cl-val">Apr 2023 – Aug 2023</span></span>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="shield-check"></i></div>
+            <span class="cert-badge cert-badge--done">Completed</span>
+          </div>
+          <h3 class="cert-title">APNIC Academy</h3>
+          <p class="cert-org">APNIC</p>
+          <p class="cert-desc">Completed networking and Internet technology courses covering core internet infrastructure concepts.</p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">ISSUER</span><span class="cl-val">APNIC Academy</span></span>
+            <span class="cl-row"><span class="cl-key">DATE</span><span class="cl-val">01 Feb 2026</span></span>
+          </div>
+        </div>
+
+        <div class="cert-card cert-card--done reveal">
+          <div class="cert-top">
+            <div class="cert-ico cert-ico--done"><i data-lucide="network"></i></div>
+            <span class="cert-badge cert-badge--done">Completed</span>
+          </div>
+          <h3 class="cert-title">Cisco Networking Academy</h3>
+          <p class="cert-org">Cisco Networking Academy</p>
+          <p class="cert-desc">Completed networking and cybersecurity fundamentals courses.</p>
+          <div class="cert-log">
+            <span class="cl-row"><span class="cl-key">ISSUER</span><span class="cl-val">Cisco Networking Academy</span></span>
+            <span class="cl-row"><span class="cl-key">DATE</span><span class="cl-val">08 Feb 2026</span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="eyebrow__num">07</span>
+        <span class="eyebrow__txt">Contact</span>
+      </div>
+      <div class="contact__layout">
+        <div class="contact__left reveal">
+          <h2 class="sec-h2">Let's <span class="c-primary">Connect</span></h2>
+          <p class="contact__p">Whether you have an internship opportunity, a project idea, or want to talk business analysis &amp; systems design — I'd love to hear from you.</p>
+          <p class="contact__p">Actively seeking <strong class="c-primary">internship positions</strong> in business analysis, systems analysis, and IT operations.</p>
+
+          <!-- Forensic status log -->
+          <div class="contact-log">
+            <div class="clog-hd">
+              <i data-lucide="terminal" style="width:13px;height:13px;"></i>
+              <span>availability.log</span>
+            </div>
+            <div class="clog-body">
+              <div class="clog-line"><span class="clog-key">STATUS</span><span class="clog-sep">:</span><span class="clog-val clog-active">OPEN_TO_WORK</span></div>
+              <div class="clog-line"><span class="clog-key">TYPE</span><span class="clog-sep">:</span><span class="clog-val">Internship · Part-time</span></div>
+              <div class="clog-line"><span class="clog-key">DOMAIN</span><span class="clog-sep">:</span><span class="clog-val">Business Analysis · Systems Analysis · IT</span></div>
+              <div class="clog-line"><span class="clog-key">LOCATION</span><span class="clog-sep">:</span><span class="clog-val">Sri Lanka (Remote OK)</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="contact__right">
+          <a href="mailto:minolirashmika17@gmail.com" class="cc-card reveal">
+            <div class="cc-ico"><i data-lucide="mail"></i></div>
+            <div class="cc-txt">
+              <span class="cc-label">Email</span>
+              <span class="cc-val">minolirashmika17@gmail.com</span>
+            </div>
+            <i data-lucide="arrow-up-right" class="cc-arrow"></i>
+          </a>
+          <a href="tel:+94765449807" class="cc-card reveal">
+            <div class="cc-ico"><i data-lucide="phone"></i></div>
+            <div class="cc-txt">
+              <span class="cc-label">Phone</span>
+              <span class="cc-val">076 544 9807</span>
+            </div>
+            <i data-lucide="arrow-up-right" class="cc-arrow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/minolifernando"
+             target="_blank" rel="noopener" class="cc-card reveal">
+            <div class="cc-ico"><img src="assets/linkedin logo.png"></div>
+            <div class="cc-txt">
+              <span class="cc-label">LinkedIn</span>
+              <span class="cc-val">linkedin.com/in/minolifernando</span>
+            </div>
+            <i data-lucide="arrow-up-right" class="cc-arrow"></i>
+          </a>
+          <a href="https://github.com/Mino2003"
+             target="_blank" rel="noopener" class="cc-card reveal">
+            <div class="cc-ico"><img src="assets/github.png"></div>
+            <div class="cc-txt">
+              <span class="cc-label">GitHub</span>
+              <span class="cc-val">github.com/Mino2003</span>
+            </div>
+            <i data-lucide="arrow-up-right" class="cc-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__logo"><span class="logo-bracket">[</span>MF<span class="logo-bracket">]</span></span>
+        <span class="footer__copy">© 2026 Minoli Fernando · Crafted with precision.</span>
+        <div class="footer__socials">
+          <a href="https://github.com/Mino2003" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="https://www.linkedin.com/in/minolifernando" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:minolirashmika17@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
